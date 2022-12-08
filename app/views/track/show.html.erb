@@ -1,0 +1,15 @@
+<%=  @track.title%>
+<%=  @track.user.pseudo%>
+<% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+<% end %>
+
+<%= @comment.text%>
+
+<%= form_with(model: @track) do |f|%>
+<%= f.label :text %>
+<%= f.text_area :text%>
+<br /> <br />
+<%= f.submit "Send"%>
+<% end %>
+

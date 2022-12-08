@@ -1,0 +1,13 @@
+<a href="<%= settings_path%>">modifer le profil</a>
+
+<%=current_user.pseudo%>
+<%=current_user.description%>
+<%=current_user.email%>
+
+<% if current_user.avatar.attached? %>
+    <%= image_tag current_user.avatar %>
+<% end %>
+
+<% @tracks.each do |i| %>
+    <p class="title">Title : <%= i.title %></p>
+<% end %>

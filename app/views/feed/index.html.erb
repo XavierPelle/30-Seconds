@@ -1,0 +1,9 @@
+<a href="<%= profil_index_path%>">Voir le profil</a>
+<a href="<%= drums_path%>">Jouer de la musique</a>
+
+
+<% @tracks.each do |i| %>
+    <p class="title">Title : <%= i.title %></p>
+    <p class="title">Pseudo : <%= i.user.pseudo %></p>
+    <a href="<%= track_path(i.id)%>">lien</a>
+<% end %>
