@@ -3,7 +3,8 @@
 
 
 <% @tracks.each do |i| %>
-    <p class="title">Title : <%= i.title %></p>
-    <p class="title">Pseudo : <%= i.user.pseudo %></p>
+    <p >Title : <%= i.title %></p>
+    <p >Pseudo : <%= i.user.pseudo %></p>
+    <p >like : <%= i.votes.count %></p>
     <a href="<%= track_path(i.id)%>">lien</a>
 <% end %>
