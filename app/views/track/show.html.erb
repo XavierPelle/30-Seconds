@@ -2,10 +2,41 @@
 <%=  @track.id%>
 <%=  @track.user.pseudo%>
 <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar %>
+<%= image_tag @user.avatar %>
 <% end %>
+ 
+ <!---Formulaire creation like ---->
+ <% i = 0%>
+ <% @track_like.each do |track|%>
+<% i = i + 1%>
+<%end%> 
+<p> like: <%= i %></p>
+
+<% if current_user %>
+
+    <% if @like %>
+
+        <% if @like.user.id == current_user.id && @like.track.id == @track.id %>
+
+            <p>ok</p>
+
+        <%else %>
+
+        <% end%>
+
+    <%else %>
+                <%= form_tag url_for(:action=>"create" , :controller=>"vote"), method: "post" do %>
+                <%= hidden_field_tag 'track', @track.id %>
+                <div class="actions">
+                <%= submit_tag "like" %>
+                </div>
+                <% end %>
+    <% end%>
+
+<%end%>
 
 
+ <!---Formulaire creation commentaire---->
 <%= form_tag url_for(:action=>"create" , :controller=>"comment"), method: "post" do %>
   <div class="field">
   <%= label_tag 'content' %>

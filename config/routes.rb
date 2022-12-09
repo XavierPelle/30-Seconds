@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :drums
   resources :track
   resources :comment
+  resources :vote
 end
