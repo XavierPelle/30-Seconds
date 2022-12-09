@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Lien figma : https://www.figma.com/file/y0gM5UtfVUtVmTn3u2DgTL/Maquette?t=FfyhBI6bW9Utq4QX-1
+Lien du site : http://thp.killianvaillant.fr:3000
