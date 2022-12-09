@@ -1,15 +1,22 @@
 <%=  @track.title%>
+<%=  @track.id%>
 <%=  @track.user.pseudo%>
 <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar %>
 <% end %>
 
-<%= @comment.text%>
 
-<%= form_with(model: @track) do |f|%>
-<%= f.label :text %>
-<%= f.text_area :text%>
-<br /> <br />
-<%= f.submit "Send"%>
+<%= form_tag url_for(:action=>"create" , :controller=>"comment"), method: "post" do %>
+  <div class="field">
+  <%= label_tag 'content' %>
+    <%= text_field_tag 'content', @content %>
+  </div>
+   <%= hidden_field_tag 'track', @track.id %>
+  <div class="actions">
+  <%= submit_tag "Send" %>
+  </div>
 <% end %>
 
+<% @track_com.each do |track|%>
+<%= track.content%>
+<%end%>

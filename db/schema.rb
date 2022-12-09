@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_123450) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "text"
+    t.string "content"
     t.bigint "user_id"
     t.bigint "track_id"
     t.datetime "created_at", null: false
