@@ -77,6 +77,6 @@ gem 'devise'
 
 gem 'mailjet'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 
 gem 'faker'
