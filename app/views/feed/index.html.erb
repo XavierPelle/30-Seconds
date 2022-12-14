@@ -1,10 +1,8 @@
-<a href="<%= profil_index_path%>">Voir le profil</a>
-<a href="<%= drums_path%>">Jouer de la musique</a>
-
-
-<% @tracks.each do |i| %>
-    <p >Title : <%= i.title %></p>
-    <p >Pseudo : <%= i.user.pseudo %></p>
-    <p >like : <%= i.votes.count %></p>
-    <a href="<%= track_path(i.id)%>">lien</a>
-<% end %>
+<div class="bg-primary bg-cover">
+    <div class="container mx-auto">
+        <%= render "include/logo" %>
+        <%= render "include/navbar" %>
+        <%= render "feed/news" %>
+        <%= render "feed/tracks" %> 
+    </div>
+</div>
