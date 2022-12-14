@@ -1,0 +1,27 @@
+<div class="mt-56">
+  <div class="h-96 bg-third w-full rounded-tl-3xl rounded-tr-3xl relative">
+    <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar,class:"h-64 w-64 aspect-square bg-secondary rounded-xl absolute -bottom-32 left-40" %>
+    <% end %>
+  </div>
+  <div class="h-96 bg-five ">
+    <div class="flex justify-end ">
+      <a href="<%= profil_index_path %>">
+        <button class="flex mt-4 mr-4 p-9 items-center rounded-md h-11 text-2xl font-custom bg-secondary">
+          Annuler les modifications
+        </button>
+      </a>
+    </div>
+    <div class="mx-44 container">
+      <p class="text-3xl mt-16 text-four">
+        <%= current_user.pseudo %>
+      </p>
+      <p class="text-3xl mt-8 text-four w-4/5">
+        <%= current_user.description %>
+      </p>
+    </div>
+  </div>
+  <div class="bg-secondary rounded-br-3xl rounded-bl-3xl">
+    <%= render "settings/form" %>
+  </div>
+</div>
