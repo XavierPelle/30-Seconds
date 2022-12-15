@@ -1,5 +1,5 @@
 //---------------------Just Playing-------------------------- //
-
+console.log("Drum program")
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return;
     e.target.classList.remove('playing');
@@ -117,8 +117,30 @@ function removeTransition(e) {
   var play = document.getElementsByClassName("play");
   
   let playng = function(){
-  
+
   var parent = this.parentNode;
+  var parenta = parent.parentNode;
+  var parentb = parenta.parentNode;
+
+  var i = 0;
+
+  if (i == 0) {
+    i = 1;
+    var elema = parentb.getElementsByClassName("myProgress");
+    var elem = elema[0].getElementsByClassName("myBar");
+    var width = 0;
+    var id = setInterval(frame, 300);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem[0].style.width = width + "%";
+      }
+    }
+  }
+
   var element = parent.getElementsByClassName("input");
   let tabb = element[0].textContent
   
@@ -132,11 +154,9 @@ function removeTransition(e) {
       setTimeout(() => {
   
         const audio = document.querySelector(`audio[data-key="${a}"]`);
-        const key = document.querySelector(`div[data-key="${a}"]`);
   
         if (!audio) return;
   
-        key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
           }, i * 10);
@@ -154,6 +174,7 @@ function removeTransition(e) {
   var fusion = document.getElementById("fusion");
   
   var check = document.getElementsByClassName("myCheck");
+  var fusionform = document.getElementById("fusion-form");
   let checked = false
   
   let fusionFunction = function(){
@@ -162,6 +183,10 @@ function removeTransition(e) {
   let tabTwo = []
   let tabMix = new Array(10000);
   if (checked == false){
+
+    fusion.innerHTML="VALID"
+    fusionform.style.visibility = "visible"
+
     checked = true
    
     for (var i = 0; i < check.length; i++) {
@@ -223,17 +248,15 @@ function removeTransition(e) {
   
     //------Save Fusion-----//
   
-   
-  
     var trackk = document.getElementById("fusioninput");
   
     trackk.innerHTML += tab;
     document.getElementById("fusioninput").value = tabMix.join(",") ;
-    
-  
     
   }
   
   }
   
   fusion.addEventListener('click', fusionFunction);
+
+  //

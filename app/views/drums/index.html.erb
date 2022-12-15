@@ -1,96 +1,404 @@
+<%= javascript_import_module_tag "custom/drum" %>
+
 <section id="music-general">
+
+    <audio data-key="103" src="assets/clap.wav"></audio>
+    <audio data-key="104" src="assets/hihat.wav"></audio>
+    <audio data-key="105" src="assets/kick.wav"></audio>
+    <audio data-key="100" src="assets/openhat.wav"></audio>
+    <audio data-key="101" src="assets/boom.wav"></audio>
+    <audio data-key="102" src="assets/ride.wav"></audio>
+    <audio data-key="97" src="assets/snare.wav"></audio>
+    <audio data-key="98" src="assets/tom.wav"></audio>
+    <audio data-key="99" src="assets/tink.wav"></audio>
+    <audio data-key="65" src="assets/c3.mp3"></audio>
+    <audio data-key="81" src="assets/c4.mp3"></audio>
+    <audio data-key="87" src="assets/c5.mp3"></audio>
+    <audio data-key="90" src="assets/d3.mp3"></audio>
+    <audio data-key="83" src="assets/d4.mp3"></audio>
+    <audio data-key="88" src="assets/d5.mp3"></audio>
+    <audio data-key="69" src="assets/e3.mp3"></audio>
+    <audio data-key="68" src="assets/e4.mp3"></audio>
+    <audio data-key="67" src="assets/e5.mp3"></audio>
+    <audio data-key="82" src="assets/f3.mp3"></audio>
+    <audio data-key="70" src="assets/f4.mp3"></audio>
+    <audio data-key="86" src="assets/f5.mp3"></audio>
+    <audio data-key="84" src="assets/g3.mp3"></audio>
+    <audio data-key="71" src="assets/g4.mp3"></audio>
+    <audio data-key="66" src="assets/g5.mp3"></audio>
+    <audio data-key="89" src="assets/a3.mp3"></audio>
+    <audio data-key="72" src="assets/a4.mp3"></audio>
+    <audio data-key="78" src="assets/a5.mp3"></audio>
+    <audio data-key="85" src="assets/b3.mp3"></audio>
+    <audio data-key="74" src="assets/b4.mp3"></audio>
+    <audio data-key="188" src="assets/b5.mp3"></audio>
+    <audio data-key="79" src="assets/bell.wav"></audio>
+    <audio data-key="73" src="assets/bell2.flac"></audio>
+    <audio data-key="80" src="assets/bell3.wav"></audio>
+    <audio data-key="75" src="assets/snow.wav"></audio>
+
 
 <div id="music">
 
-  <div id="block-btn">
-  <button class="glow-on-hover" type="button" id="record"> RECORD </button>
-  <button class="glow-on-hover" type="button" id="ear"> EAR </button>
-  <button class="glow-on-hover" type="button" id="save"> VALID </button>
+   <div class="keys">
 
-  </div>
+    <div id="keytxt">
+    
+      <div>
 
-  <div class="keys">
-      <div data-key="81" class="key">
-        <kbd>Q</kbd>
-        <span class="sound">clap</span>
+        <div data-key="1" class="key soundbox">
+          <kbd>1</kbd>
+          <span class="sound">clap</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>2</kbd>
+          <span class="sound">clap</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>3</kbd>
+          <span class="sound">hihat</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>4</kbd>
+          <span class="sound">kick</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>5</kbd>
+          <span class="sound">openhat</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>6</kbd>
+          <span class="sound">boom</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>7</kbd>
+          <span class="sound">ride</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>8</kbd>
+          <span class="sound">snare</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>9</kbd>
+          <span class="sound">tom</span>
+        </div>
+
+        <div data-key="1" class="key soundbox">
+          <kbd>0</kbd>
+          <span class="sound">tink</span>
+        </div>
+      
       </div>
-      <div data-key="83" class="key">
-        <kbd>S</kbd>
-        <span class="sound">hihat</span>
+
+      <div>
+        <div data-key="65" class="key piano">
+          <kbd>A</kbd>
+          <span class="sound">C1</span>
+        </div>
+
+           <div data-key="90" class="key piano">
+          <kbd>Z</kbd>
+          <span class="sound">D1</span>
+        </div>
+
+        <div data-key="69" class="key piano">
+          <kbd>E</kbd>
+          <span class="sound">E1</span>
+        </div>
+
+        <div data-key="82" class="key piano">
+          <kbd>R</kbd>
+          <span class="sound">F1</span>
+        </div>
+
+        <div data-key="84" class="key piano">
+          <kbd>T</kbd>
+          <span class="sound">G1</span>
+        </div>
+
+        <div data-key="89" class="key piano">
+          <kbd>Y</kbd>
+          <span class="sound">A1</span>
+        </div>
+
+        <div data-key="85" class="key piano">
+          <kbd>U</kbd>
+          <span class="sound">B1</span>
+        </div>
+
+        <div data-key="73" class="key soundboxtwo">
+          <kbd>I</kbd>
+          <span class="sound">Bell 1</span>
+        </div>
+
+        <div data-key="79" class="key soundboxtwo">
+          <kbd>O</kbd>
+          <span class="sound">Bell 2</span>
+        </div>
+
+        <div data-key="80" class="key soundboxtwo">
+          <kbd>P</kbd>
+          <span class="sound">Bell 3</span>
+        </div>
+      
       </div>
-      <div data-key="68" class="key">
-        <kbd>D</kbd>
-        <span class="sound">kick</span>
+
+      <div>
+      <div data-key="81" class="key piano">
+          <kbd>Q</kbd>
+          <span class="sound">c2</span>
+        </div>
+
+        <div data-key="83" class="key piano">
+          <kbd>S</kbd>
+          <span class="sound">D2</span>
+        </div>
+
+        <div data-key="68" class="key piano">
+          <kbd>D</kbd>
+          <span class="sound">e2</span>
+        </div>
+
+        <div data-key="70" class="key piano">
+          <kbd>F</kbd>
+          <span class="sound">F2</span>
+        </div>
+
+        <div data-key="71" class="key piano">
+          <kbd>G</kbd>
+          <span class="sound">G2</span>
+        </div>
+
+        <div data-key="72" class="key piano">
+          <kbd>H</kbd>
+          <span class="sound">A2</span>
+        </div>
+
+        <div data-key="74" class="key piano">
+          <kbd>J</kbd>
+          <span class="sound">B2</span>
+        </div>
+
+        <div data-key="75" class="key soundboxtwo">
+          <kbd>K</kbd>
+          <span class="sound">snow</span>
+        </div>
+
+        <div data-key="1" class="key soundboxtwo">
+          <kbd>L</kbd>
+          <span class="sound">tom</span>
+        </div>
+
+        <div data-key="1" class="key soundboxtwo">
+          <kbd>M</kbd>
+          <span class="sound">tink</span>
+        </div>
+      
       </div>
-      <div data-key="70" class="key">
-        <kbd>F</kbd>
-        <span class="sound">openhat</span>
+
+      <div>
+      <div data-key="87" class="key piano">
+          <kbd>W</kbd>
+          <span class="sound">C3</span>
+        </div>
+
+        <div data-key="88" class="key piano">
+          <kbd>X</kbd>
+          <span class="sound">d3</span>
+        </div>
+
+        <div data-key="67" class="key piano">
+          <kbd>C</kbd>
+          <span class="sound">e3</span>
+        </div>
+
+        <div data-key="86" class="key piano">
+          <kbd>V</kbd>
+          <span class="sound">F3</span>
+        </div>
+
+        <div data-key="66" class="key piano">
+          <kbd>B</kbd>
+          <span class="sound">g3</span>
+        </div>
+
+        <div data-key="78" class="key piano">
+          <kbd>N</kbd>
+          <span class="sound">a3</span>
+        </div>
+
+        <div data-key="188" class="key piano">
+          <kbd>?</kbd>
+          <span class="sound">b3</span>
+        </div>
+
+        <div data-key="1" class="key soundboxtwo">
+          <kbd>.</kbd>
+          <span class="sound">tom</span>
+        </div>
+
+        <div data-key="1" class="key soundboxtwo">
+          <kbd>/</kbd>
+          <span class="sound">tink</span>
+        </div>
+
+           <div data-key="1" class="key soundboxtwo">
+          <kbd>§</kbd>
+          <span class="sound">clap</span>
+        </div>
+      
       </div>
-      <div data-key="71" class="key">
-        <kbd>G</kbd>
-        <span class="sound">boom</span>
-      </div>
-      <div data-key="72" class="key">
-        <kbd>H</kbd>
-        <span class="sound">ride</span>
-      </div>
-      <div data-key="74" class="key">
-        <kbd>J</kbd>
-        <span class="sound">snare</span>
-      </div>
-      <div data-key="75" class="key">
-        <kbd>K</kbd>
-        <span class="sound">tom</span>
-      </div>
-      <div data-key="76" class="key">
-        <kbd>L</kbd>
-        <span class="sound">tink</span>
-      </div>
+    
     </div>
 
-    <audio data-key="81" src="assets/clap.wav"></audio>
-    <audio data-key="83" src="assets/hihat.wav"></audio>
-    <audio data-key="68" src="assets/kick.wav"></audio>
-    <audio data-key="70" src="assets/openhat.wav"></audio>
-    <audio data-key="71" src="assets/boom.wav"></audio>
-    <audio data-key="72" src="assets/ride.wav"></audio>
-    <audio data-key="74" src="assets/snare.wav"></audio>
-    <audio data-key="75" src="assets/tom.wav"></audio>
-    <audio data-key="76" src="assets/tink.wav"></audio>
+    <div id="keynb">
 
+      <div>
+        <div data-key="1" class="key soundboxtree">
+          <kbd>/</kbd>
+          <span class="sound">snare</span>
+        </div>
+
+        <div data-key="1" class="key soundboxtree">
+          <kbd>*</kbd>
+          <span class="sound">tom</span>
+        </div>
+
+        <div data-key="1" class="key soundboxtree">
+          <kbd>-</kbd>
+          <span class="sound">tink</span>
+        </div>
+      </div>
+
+      <div>
+          <div data-key="103" class="key drum">
+          <kbd>7</kbd>
+          <span class="sound">clap</span>
+        </div>
+
+        <div data-key="104" class="key drum">
+          <kbd>8</kbd>
+          <span class="sound">hihat</span>
+        </div>
+
+        <div data-key="105" class="key drum">
+          <kbd>9</kbd>
+          <span class="sound">kick</span>
+        </div>
+      
+      </div>
+
+      
+      <div>
+        <div data-key="100" class="key drum">
+          <kbd>4</kbd>
+          <span class="sound">openhat</span>
+        </div>
+
+        <div data-key="101" class="key drum">
+          <kbd>5</kbd>
+          <span class="sound">boom</span>
+        </div>
+
+        <div data-key="102" class="key drum">
+          <kbd>6</kbd>
+          <span class="sound">ride</span>
+        </div>
+      
+      </div>
+
+      <div>
+        <div data-key="97" class="key drum">
+          <kbd>1</kbd>
+          <span class="sound">snare</span>
+        </div>
+
+        <div data-key="98" class="key drum">
+          <kbd>2</kbd>
+          <span class="sound">tom</span>
+        </div>
+
+        <div data-key="99" class="key drum">
+          <kbd>3</kbd>
+          <span class="sound">tink</span>
+        </div>
+      </div>
+   
+    </div>
+      
+  </div>
+
+   <div id="block-btn">
+  <button class="btn-8" type="button" id="record"> RECORD </button>
+  <button class="btn-8" type="button" id="ear"> EAR </button>
+  <button class="btn-8" type="button" id="save"> VALID </button>
+
+  </div>
+    
 </div>
 
 <div id="track-all">
 
+  <h2 id="track-title">My track</h2>
+
   <%= form_tag url_for(action: 'create'), method: "post" do %>
-  <%= text_field_tag 'title', 'Titre' %>
+  <%= text_field_tag 'title', 'TITRE' %>
   <%= hidden_field_tag 'input' %>
-  <%= submit_tag "SAVE", class:"glow-on-hover" %> 
+  <%= submit_tag "SAVE TRACK", class:"btn-8 btn-9" %> 
   <% end %> 
 
-    Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()">
-  <p id="text" style="display:none">Checkbox is CHECKED!</p>
 
   <% @track.each do |i| %>
-  <div class="track-all">
-    <p class="title">Title : <%= i.title %></p>
-    <p class="input none"><%= i.inputs %></p>
-   
-    <button class="glow-on-hover play" type="button"> Play </button>
-    <input type="checkbox" class="myCheck">
 
+  <div class="track-all">
+
+    <div class="track-content">
+
+        <div class="track-content-txt">
+          <p class="title">Title : <%= i.title %></p>
+          <p class="author">Author : <%= i.user.pseudo %></p>
+        </div>
+
+        <div>
+          <p class="input none"><%= i.inputs %></p>
+          <button class="play" type="button"> Play </button>
+          <input type="checkbox" class="myCheck">
+     
+        </div>
+
+      </div>
+   
+      <div class="myProgress">
+
+        <div class="myBar"></div>
+
+      </div>
   </div>
 
   <% end %>
 
-  <button class="glow-on-hover" id="fusion" type="button"> Fusion </button>
+  <button class="btn-8 btn-9" id="fusion" type="button"> FUSION </button>
 
+  <div id="fusion-form">
   <%= form_tag url_for(action: 'create'), method: "post" do %>
-  <%= text_field_tag 'title', 'Titre' %>
-  <%= text_field_tag 'fusioninput' %>
-  <%= submit_tag "SAVE", class:"glow-on-hover" %> 
+  <%= text_field_tag 'title', 'TITRE' %>
+  <%= hidden_field_tag 'fusioninput' %>
+  <%= submit_tag "SAVE", class:"btn-8 btn-9" %> 
   <% end %> 
+  </div>
   
 </div>
 
 </section>
+
+<script>
+
+</script>

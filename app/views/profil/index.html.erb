@@ -1,3 +1,42 @@
+
+    <audio data-key="103" src="assets/clap.wav"></audio>
+    <audio data-key="104" src="assets/hihat.wav"></audio>
+    <audio data-key="105" src="assets/kick.wav"></audio>
+    <audio data-key="100" src="assets/openhat.wav"></audio>
+    <audio data-key="101" src="assets/boom.wav"></audio>
+    <audio data-key="102" src="assets/ride.wav"></audio>
+    <audio data-key="97" src="assets/snare.wav"></audio>
+    <audio data-key="98" src="assets/tom.wav"></audio>
+    <audio data-key="99" src="assets/tink.wav"></audio>
+    <audio data-key="65" src="assets/c3.mp3"></audio>
+    <audio data-key="81" src="assets/c4.mp3"></audio>
+    <audio data-key="87" src="assets/c5.mp3"></audio>
+    <audio data-key="90" src="assets/d3.mp3"></audio>
+    <audio data-key="83" src="assets/d4.mp3"></audio>
+    <audio data-key="88" src="assets/d5.mp3"></audio>
+    <audio data-key="69" src="assets/e3.mp3"></audio>
+    <audio data-key="68" src="assets/e4.mp3"></audio>
+    <audio data-key="67" src="assets/e5.mp3"></audio>
+    <audio data-key="82" src="assets/f3.mp3"></audio>
+    <audio data-key="70" src="assets/f4.mp3"></audio>
+    <audio data-key="86" src="assets/f5.mp3"></audio>
+    <audio data-key="84" src="assets/g3.mp3"></audio>
+    <audio data-key="71" src="assets/g4.mp3"></audio>
+    <audio data-key="66" src="assets/g5.mp3"></audio>
+    <audio data-key="89" src="assets/a3.mp3"></audio>
+    <audio data-key="72" src="assets/a4.mp3"></audio>
+    <audio data-key="78" src="assets/a5.mp3"></audio>
+    <audio data-key="85" src="assets/b3.mp3"></audio>
+    <audio data-key="74" src="assets/b4.mp3"></audio>
+    <audio data-key="188" src="assets/b5.mp3"></audio>
+    <audio data-key="79" src="assets/bell.wav"></audio>
+    <audio data-key="73" src="assets/bell2.flac"></audio>
+    <audio data-key="80" src="assets/bell3.wav"></audio>
+    <audio data-key="75" src="assets/snow.wav"></audio>
+
+
+<%= javascript_import_module_tag "custom/profil" %>
+
 <a href="<%= settings_path%>">modifer le profil</a>
 
 <%=current_user.pseudo%>
@@ -9,5 +48,9 @@
 <% end %>
 
 <% @tracks.each do |i| %>
+    <div>
     <p class="title">Title : <%= i.title %></p>
+    <p class="input none"><%= i.inputs %></p>
+    <p class="play">Play</p>
+    </div>
 <% end %>

@@ -1,7 +1,7 @@
 class TrackController < ApplicationController
     def show
         @track = Track.find(params[:id])
-        @user = User.find(params[:id])
+        @user = current_user
         @track_com = @track.comments
         @track_like = @track.votes
 
@@ -11,7 +11,8 @@ class TrackController < ApplicationController
         
     end
 
-    def create
+
+    def index
 
     end
 end

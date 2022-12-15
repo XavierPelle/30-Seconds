@@ -13,7 +13,7 @@ class DrumsController < ApplicationController
             puts track
 
             if track.save
-                redirect_back(fallback_location: root_path)
+                redirect_to drums_path
             end
         end
         if params[:fusioninput]
