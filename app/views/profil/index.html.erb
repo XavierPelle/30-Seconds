@@ -1,0 +1,61 @@
+    <audio data-key="103" src="../../assets/sounds/clap.wav"></audio>
+    <audio data-key="104" src="../../assets/sounds/hihat.wav"></audio>
+    <audio data-key="105" src="../../assets/sounds/kick.wav"></audio>
+    <audio data-key="100" src="../../assets/sounds/openhat.wav"></audio>
+    <audio data-key="101" src="../../assets/sounds/boom.wav"></audio>
+    <audio data-key="102" src="../../assets/sounds/ride.wav"></audio>
+    <audio data-key="97" src="../../assets/sounds/snare.wav"></audio>
+    <audio data-key="98" src="../../assets/sounds/tom.wav"></audio>
+    <audio data-key="99" src="../../assets/sounds/tink.wav"></audio>
+    <audio data-key="65" src="../../assets/sounds/c3.mp3"></audio>
+    <audio data-key="81" src="../../assets/sounds/c4.mp3"></audio>
+    <audio data-key="87" src="../../assets/sounds/c5.mp3"></audio>
+    <audio data-key="90" src="../../assets/sounds/d3.mp3"></audio>
+    <audio data-key="83" src="../../assets/sounds/d4.mp3"></audio>
+    <audio data-key="88" src="../../assets/sounds/d5.mp3"></audio>
+    <audio data-key="69" src="../../assets/sounds/e3.mp3"></audio>
+    <audio data-key="68" src="../../assets/sounds/e4.mp3"></audio>
+    <audio data-key="67" src="../../assets/sounds/e5.mp3"></audio>
+    <audio data-key="82" src="../../assets/sounds/f3.mp3"></audio>
+    <audio data-key="70" src="../../assets/sounds/f4.mp3"></audio>
+    <audio data-key="86" src="../../assets/sounds/f5.mp3"></audio>
+    <audio data-key="84" src="../../assets/sounds/g3.mp3"></audio>
+    <audio data-key="71" src="../../assets/sounds/g4.mp3"></audio>
+    <audio data-key="66" src="../../assets/sounds/g5.mp3"></audio>
+    <audio data-key="89" src="../../assets/sounds/a3.mp3"></audio>
+    <audio data-key="72" src="../../assets/sounds/a4.mp3"></audio>
+    <audio data-key="78" src="../../assets/sounds/a5.mp3"></audio>
+    <audio data-key="85" src="../../assets/sounds/b3.mp3"></audio>
+    <audio data-key="74" src="../../assets/sounds/b4.mp3"></audio>
+    <audio data-key="188" src="../../assets/sounds/b5.mp3"></audio>
+    <audio data-key="79" src="../../assets/sounds/bell.wav"></audio>
+    <audio data-key="73" src="../../assets/sounds/bell2.flac"></audio>
+    <audio data-key="80" src="../../assets/sounds/bell3.wav"></audio>
+    <audio data-key="75" src="../../assets/sounds/snow.wav"></audio>
+
+<%= javascript_import_module_tag "custom/profil" %>
+
+<a href="<%= settings_path%>">modifer le profil</a>
+<div class="bg-primary">
+    <div class="container mx-auto">
+        <%= render "include/logo" %>
+        <%= render "include/navbar" %>
+        <%= render "profil/profil" %>
+    </div>
+</div>
+
+
+
+
+
+ <% if current_user.avatar.attached? %>
+    <%= image_tag current_user.avatar %>
+<% end %>
+
+<% @tracks.each do |i| %>
+    <div>
+    <p class="title">Title : <%= i.title %></p>
+    <p class="input none"><%= i.inputs %></p>
+    <p class="play">Play</p>
+    </div>
+<% end %>
