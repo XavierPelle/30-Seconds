@@ -68,7 +68,7 @@
 
         <% end%>
 
-    <%else %>
+    <% else %>
                 <%= form_tag url_for(:action=>"create" , :controller=>"vote"), method: "post" do %>
                 <%= hidden_field_tag 'track', @track.id %>
                 <div class="actions">

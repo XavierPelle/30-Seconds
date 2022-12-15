@@ -38,15 +38,30 @@
 <%= javascript_import_module_tag "custom/profil" %>
 
 <a href="<%= settings_path%>">modifer le profil</a>
+<div class="bg-primary">
+    <div class="container mx-auto">
+        <%= render "include/logo" %>
+        <%= render "include/navbar" %>
+        <%= render "profil/profil" %>
+    </div>
+</div>
 
-<%=current_user.pseudo%>
-<%=current_user.description%>
-<%=current_user.email%>
 
-<% if current_user.avatar.attached? %>
+
+
+
+
+
+
+
+<!-- <a href="<%= settings_path%>">Modifer le profil</a> -->
+
+
+
+<!-- <% if current_user.avatar.attached? %>
     <%= image_tag current_user.avatar %>
-<% end %>
-
+<% end %> -->
+<!-- 
 <% @tracks.each do |i| %>
     <div>
     <p class="title">Title : <%= i.title %></p>
@@ -54,3 +69,4 @@
     <p class="play">Play</p>
     </div>
 <% end %>
+<% end %> -->

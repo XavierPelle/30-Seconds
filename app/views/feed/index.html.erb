@@ -1,3 +1,32 @@
+
+
+<a href="<%= profil_index_path%>">Voir le profil</a>
+<a href="<%= drums_path%>">Jouer de la musique</a>
+
+<%j = 0 %>
+<% @tracks.each do |i| %>
+    <%j = j + 1 %>
+    <%if j < 100 %>
+    <div>
+    <p >Title : <%= i.title %></p>
+    <p >Pseudo : <%= i.user.pseudo %></p>
+    <p >like : <%= i.votes.count %></p>
+    <p class="input none"><%= i.inputs %></p>
+    <p class="play">Play</p>
+    <a href="<%= track_path(i.id)%>">lien</a>
+    <p>------------</p>
+    </div>
+    <%end%>
+<% end %>
+<div class="bg-primary bg-cover">
+    <div class="container mx-auto">
+        <%= render "include/logo" %>
+        <%= render "include/navbar" %>
+        <%= render "feed/news" %>
+        <%= render "feed/tracks" %> 
+    </div>
+</div>
+
   
 <%= javascript_import_module_tag "custom/feed" %>
 
@@ -35,22 +64,3 @@
     <audio data-key="73" src="assets/bell2.flac"></audio>
     <audio data-key="80" src="assets/bell3.wav"></audio>
     <audio data-key="75" src="assets/snow.wav"></audio>
-
-<a href="<%= profil_index_path%>">Voir le profil</a>
-<a href="<%= drums_path%>">Jouer de la musique</a>
-
-<%j = 0 %>
-<% @tracks.each do |i| %>
-    <%j = j + 1 %>
-    <%if j < 100 %>
-    <div>
-    <p >Title : <%= i.title %></p>
-    <p >Pseudo : <%= i.user.pseudo %></p>
-    <p >like : <%= i.votes.count %></p>
-    <p class="input none"><%= i.inputs %></p>
-    <p class="play">Play</p>
-    <a href="<%= track_path(i.id)%>">lien</a>
-    <p>------------</p>
-    </div>
-    <%end%>
-<% end %>

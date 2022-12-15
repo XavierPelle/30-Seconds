@@ -1,0 +1,22 @@
+<div class="ml-11 h-form w-form bg-primary bg-opacity-70 backdrop-blur-sm rounded-xl flex justify-center flex-col">
+  <h2 class="text-center text-four text-7xl mb-12">Connexion</h2>
+  <%= render "include/alert"%>
+  <%= form_for(:user, :url => session_path(:user), class:"flex flex-col text-four text-2xl") do |f| %>
+    <%= f.label :email, class:"text-4xl"%>
+    <%= f.text_field :email, class:"h-20 text-primary text-2xl bg-secondary rounded-lg"%>
+    <%= f.label :password, class:"mt-8 text-4xl"%>
+    <%= f.password_field :password, class:"h-20 text-primary text-2xl bg-secondary rounded-lg" %>
+    <div class="flex flex-row mt-4">
+      <%= f.check_box :remember_me, class:"h-10 w-10 hover:cursor-pointer bg-secondary checked:bg-primary outline-primary hover:bg-primary rounded-lg" %>
+      <%= f.label :remember_me, class:"flex mt-1 ml-4" %>
+    </div>
+    <div class="flex justify-end">
+      <%= f.submit 'Sign in', class:"hover:bg-secondary text-four hover:text-primary font-light border-secondary border-4 h-20 w-60 hover:cursor-pointer duration-100" %>
+    </div>
+    <%= link_to "Forgot your password?", new_password_path(:user),class:"text-2xl text-secondary hover:text-four duration-100" %>
+    <div class="flex flex-row">
+      <p class="flex items-center">You don't have an acccount ?</p>
+      <%= link_to "Sign up", new_sign_in_path, class:"ml-4 text-secondary rounded-sm font-light hover:text-four duration-100" %>
+    </div>
+  <% end %>
+</div>

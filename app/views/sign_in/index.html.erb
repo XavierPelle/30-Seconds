@@ -1,11 +1,24 @@
-<%= form_for(:user, :url => session_path(:user)) do |f| %>
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-  <%= f.submit 'Sign in' %>
-  <%= link_to "Sign up", new_sign_in_path %>
-  <%= link_to "Forgot your password?", new_password_path(:user) %>
-<% end %>
+<section class="bg-sign-in bg-cover  backdrop-blur-3xl bg-no-repeat h-screen overflow-hidden font-custom">
+  <div class="flex flex-col lg:flex-row">
+    <div class="xl:container xl:mx-auto">
+  
+        <div class="flex  flex-col md:flex-row h-screen justify-center items-center mb-3">
+          <div class="flex flex-col mr-auto text-four">
+            <h1 class="text-9xl uppercase font-bold">30' Seconds</h1>
+            <p class="text-6xl font-light mt-12">Your talent without limits</p>  
+          </div>
+          <%= render "sign_in/form"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
 
 
