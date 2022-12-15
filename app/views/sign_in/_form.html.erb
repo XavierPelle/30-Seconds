@@ -1,4 +1,4 @@
-<div class="ml-11 h-form w-form bg-primary bg-opacity-70 backdrop-blur-sm rounded-xl flex justify-center flex-col">
+<div class="ml-11 lg:h-form lg:w-form bg-primary bg-opacity-70 backdrop-blur-sm rounded-xl flex justify-center flex-col">
   <h2 class="text-center text-four text-7xl mb-12">Connexion</h2>
   <%= render "include/alert"%>
   <%= form_for(:user, :url => session_path(:user), class:"flex flex-col text-four text-2xl") do |f| %>
@@ -13,8 +13,8 @@
     <div class="flex justify-end">
       <%= f.submit 'Sign in', class:"hover:bg-secondary text-four hover:text-primary font-light border-secondary border-4 h-20 w-60 hover:cursor-pointer duration-100" %>
     </div>
-    <%= link_to "Forgot your password?", new_password_path(:user),class:"text-2xl text-secondary hover:text-four duration-100" %>
-    <div class="flex flex-row">
+    <%= link_to "Forgot your password?", new_password_path(:user),class:"text-2xl text-secondary hover:text-four duration-100 mt-2 lg:mt-0" %>
+    <div class="flex lg:flex-row">
       <p class="flex items-center">You don't have an acccount ?</p>
       <%= link_to "Sign up", new_sign_in_path, class:"ml-4 text-secondary rounded-sm font-light hover:text-four duration-100" %>
     </div>

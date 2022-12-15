@@ -1,0 +1,25 @@
+<div class="ml-11 lg:h-form lg:w-form bg-primary bg-opacity-70 backdrop-blur-sm rounded-xl flex justify-center flex-col text-four">
+  <h2 class="text-center text-four text-7xl mb-12 mt-4 lg:mt-0">S'enregistrer</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"flex flex-col text-four text-2xl") do |f| %>
+  <%= devise_error_messages! %>
+  
+    <%= f.label :pseudo,class:"text-4xl" %><br />
+    <%= f.text_field :pseudo, autofocus: true, autocomplete: "pseudo",class:"h-20 text-primary text-2xl bg-secondary rounded-lg w-full" %>
+  
+    <%= f.label :email,class:"text-4xl pt-8" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"h-20 text-primary text-2xl bg-secondary rounded-lg w-full" %>
+  
+    <%= f.label :password,class:"text-4xl" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password",class:"h-20 text-primary text-2xl bg-secondary rounded-lg w-full" %>
+  
+    <%= f.label :password_confirmation,class:"text-4xl" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"h-20 text-primary text-2xl bg-secondary rounded-lg w-full" %>
+  
+  <div class="flex justify-end">
+    <%= f.submit "Sign up", class:"hover:bg-secondary text-four hover:text-primary text-2xl font-light border-secondary border-4 h-20 w-60 hover:cursor-pointer duration-100 mt-12" %>
+  </div>
+  <% end %>
+</div>

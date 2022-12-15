@@ -1,0 +1,11 @@
+<div class="ml-11 lg:h-form lg:w-form bg-primary bg-opacity-70 backdrop-blur-sm rounded-xl flex justify-center flex-col text-four">
+  <h2 class="text-center text-four text-7xl mb-12">Mot de passe oublié</h2>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post },class:"flex flex-col text-four text-2xl") do |f| %>
+  <!-- <%= render "devise/shared/error_messages", resource: resource %> -->
+    <%= f.label :email,class:"text-4xl" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"h-20 text-primary text-2xl bg-secondary rounded-lg w-full" %>
+    <div class="flex justify-end mt-8">
+    <%= f.submit "Réinitialiser mot de passe",class:"hover:bg-secondary text-four hover:text-primary font-light border-secondary border-4 h-20 w-60 hover:cursor-pointer duration-100" %>
+  </div>
+<% end %>
+</div>
