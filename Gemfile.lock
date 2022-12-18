@@ -268,14 +268,14 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   table_print
-  tailwindcss-rails (~> 2.0)
+  tailwindcss-rails
   turbo-rails
   tzinfo-data
   web-console
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.1.3p185
 
 BUNDLED WITH
    2.3.26
