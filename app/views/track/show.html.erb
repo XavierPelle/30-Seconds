@@ -1,104 +1,126 @@
 
-  <%= javascript_import_module_tag "custom/track" %>
-
-   
-    <audio data-key="103" src="../../assets/clap.wav"></audio>
-    <audio data-key="104" src="../../assets/hihat.wav"></audio>
-    <audio data-key="105" src="../../assets/kick.wav"></audio>
-    <audio data-key="100" src="../../assets/openhat.wav"></audio>
-    <audio data-key="101" src="../../assets/boom.wav"></audio>
-    <audio data-key="102" src="../../assets/ride.wav"></audio>
-    <audio data-key="97" src="../../assets/snare.wav"></audio>
-    <audio data-key="98" src="../../assets/tom.wav"></audio>
-    <audio data-key="99" src="../../assets/tink.wav"></audio>
-    <audio data-key="65" src="../../assets/c3.mp3"></audio>
-    <audio data-key="81" src="../../assets/c4.mp3"></audio>
-    <audio data-key="87" src="../../assets/c5.mp3"></audio>
-    <audio data-key="90" src="../../assets/d3.mp3"></audio>
-    <audio data-key="83" src="../../assets/d4.mp3"></audio>
-    <audio data-key="88" src="../../assets/d5.mp3"></audio>
-    <audio data-key="69" src="../../assets/e3.mp3"></audio>
-    <audio data-key="68" src="../../assets/e4.mp3"></audio>
-    <audio data-key="67" src="../../assets/e5.mp3"></audio>
-    <audio data-key="82" src="../../assets/f3.mp3"></audio>
-    <audio data-key="70" src="../../assets/f4.mp3"></audio>
-    <audio data-key="86" src="../../assets/f5.mp3"></audio>
-    <audio data-key="84" src="../../assets/g3.mp3"></audio>
-    <audio data-key="71" src="../../assets/g4.mp3"></audio>
-    <audio data-key="66" src="../../assets/g5.mp3"></audio>
-    <audio data-key="89" src="../../assets/a3.mp3"></audio>
-    <audio data-key="72" src="../../assets/a4.mp3"></audio>
-    <audio data-key="78" src="../../assets/a5.mp3"></audio>
-    <audio data-key="85" src="../../assets/b3.mp3"></audio>
-    <audio data-key="74" src="../../assets/b4.mp3"></audio>
-    <audio data-key="188" src="../../assets/b5.mp3"></audio>
-    <audio data-key="79" src="../../assets/bell.wav"></audio>
-    <audio data-key="73" src="../../assets/bell2.flac"></audio>
-    <audio data-key="80" src="../../assets/bell3.wav"></audio>
-    <audio data-key="75" src="../../assets/snow.wav"></audio>
-
-<p>Titre: <%=  @track.title%></p>
-<p>Track n°<%=  @track.id%></p>
-<p id="inputpart"><%=  @track.inputs%></p>
-<p>Pseudo:<%=  @track.user.pseudo%></p>
-<% if @user.avatar.attached? %>
-<p><%= image_tag @user.avatar %></p>
-<% end %>
-<p id="play"> play </p>
-
- 
- <!---Formulaire creation like ---->
-<p>------------------------------</p>
-<p>Like </p>
- <% i = 0%>
- <% @track_like.each do |track|%>
-<% i = i + 1%>
-<%end%> 
-<p> like: <%= i %></p>
-
-<% if current_user %>
-
-    <% if @like %>
-
-        <% if @like.user.id == current_user.id && @like.track.id == @track.id %>
-
-            <p>ok</p>
-
-        <%else %>
-
-        <% end%>
-
-    <% else %>
-                <%= form_tag url_for(:action=>"create" , :controller=>"vote"), method: "post" do %>
-                <%= hidden_field_tag 'track', @track.id %>
-                <div class="actions">
-                <%= submit_tag "like" %>
-                </div>
-                <% end %>
-    <% end%>
-
-<%end%>
+<%= javascript_import_module_tag "custom/track" %>
 
 
- <!---Formulaire creation commentaire---->
-<p>------------------------------</p>
-<p>comment </p>
+<audio data-key="103" src="<%= asset_path('clap.wav') %>"></audio>
+<audio data-key="104" src="<%= asset_path('hithat.wav') %>"></audio>
+<audio data-key="105" src="<%= asset_path('kick.wav') %>"></audio>
+<audio data-key="100" src="<%= asset_path('openhat.wav') %>"></audio>
+<audio data-key="101" src="<%= asset_path('boom.wav') %>"></audio>
+<audio data-key="102" src="<%= asset_path('ride.wav') %>"></audio>
+<audio data-key="97" src="<%= asset_path('snare.wav') %>"></audio>
+<audio data-key="98" src="<%= asset_path('tom.wav') %>"></audio>
+<audio data-key="99" src="<%= asset_path('tink.wav') %>"></audio>
+<audio data-key="65" src="<%= asset_path('c3.mp3') %>"></audio>
+<audio data-key="81" src="<%= asset_path('c4.mp3') %>"></audio>
+<audio data-key="87" src="<%= asset_path('c5.mp3') %>"></audio>
+<audio data-key="90" src="<%= asset_path('d3.mp3') %>"></audio>
+<audio data-key="83" src="<%= asset_path('d4.mp3') %>"></audio>
+<audio data-key="88" src="<%= asset_path('d5.mp3') %>"></audio>
+<audio data-key="69" src="<%= asset_path('e3.mp3') %>"></audio>
+<audio data-key="68" src="<%= asset_path('e4.mp3') %>"></audio>
+<audio data-key="67" src="<%= asset_path('e5.mp3') %>"></audio>
+<audio data-key="82" src="<%= asset_path('f3.mp3') %>"></audio>
+<audio data-key="70" src="<%= asset_path('f4.mp3') %>"></audio>
+<audio data-key="86" src="<%= asset_path('f5.mp3') %>"></audio>
+<audio data-key="84" src="<%= asset_path('g3.mp3') %>"></audio>
+<audio data-key="71" src="<%= asset_path('g4.mp3') %>"></audio>
+<audio data-key="66" src="<%= asset_path('g5.mp3') %>"></audio>
+<audio data-key="89" src="<%= asset_path('a3.mp3') %>"></audio>
+<audio data-key="72" src="<%= asset_path('a4.mp3') %>"></audio>
+<audio data-key="78" src="<%= asset_path('a5.mp3') %>"></audio>
+<audio data-key="85" src="<%= asset_path('b3.mp3') %>"></audio>
+<audio data-key="74" src="<%= asset_path('b4.mp3') %>"></audio>
+<audio data-key="188" src="<%= asset_path('b5.mp3') %>"></audio>
+<audio data-key="79" src="<%= asset_path('bell.wav') %>"></audio>
+<audio data-key="73" src="<%= asset_path('bell2.flac') %>"></audio>
+<audio data-key="80" src="<%= asset_path('bell3.wav') %>"></audio>
+<audio data-key="75" src="<%= asset_path('snow.wav') %>"></audio>
 
-<%= form_tag url_for(:action=>"create" , :controller=>"comment"), method: "post" do %>
-  <div class="field">
-  <%= label_tag 'content' %>
-    <%= text_field_tag 'content', @content %>
-  </div>
-   <%= hidden_field_tag 'track', @track.id %>
-  <div class="actions">
-  <%= submit_tag "Send" %>
-  </div>
-<% end %>
 
-<% @track_com.each do |track|%>
-<%= track.content%>
-<%end%>
 
-<script>
 
-</script>
+
+<div class="bg-primary bg-cover">
+	
+	<div class="container mx-auto">
+		<%= render 'include/logo' %>
+		<%= render 'include/navbar'%>
+		<div class="pt-56">
+			<div class="h-96 w-full rounded-tl-3xl rounded-tr-3xl relative ">
+				<div class="flex flex-row  h-60  rounded-r-xl rounded-tl-3xl rounded-bl-3xl justify-center">
+					<button class="bg-third w-64 rounded-tl-3xl rounded-bl-3xl">
+						<svg class="h-36 w-40 m-auto play" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M39.9456 19.0571L4.7378 40.2884C2.66501 41.532 0 40.0515 0 37.6234V13.9343C0 3.60002 11.1634 -2.85524 20.1357 2.29712L33.7272 10.1145L39.916 13.6678C41.9592 14.8819 41.9888 17.843 39.9456 19.0571ZM41.7193 36.4093L29.7267 43.3383L17.7638 50.2377C13.4702 52.6955 8.61391 52.1921 5.09018 49.7047C3.37272 48.5203 3.58 45.8849 5.38629 44.8189L43.0222 22.2551C44.7989 21.1891 47.1382 22.1959 47.4639 24.2391C48.2042 28.8288 46.309 33.7739 41.7193 36.4093Z" fill="#0D1A26"/>
+						</svg>
+					</button>
+					<div class="flex flex-col bg-five w-3/4 rounded-br-3xl rounded-tr-3xl">
+						<h3 class="text-4xl ml-4 mt-4 text-four"></h3>
+						<p class="text-2xl ml-4 mt-4 text-four"></p>
+						<div class="flex flex-row">
+							<p class="text-2xl ml-4 mt-4 text-four uppercase"><%= @track.title%></p>
+						</div>
+						
+						<div class="flex flex-row">
+							<p class="text-xl ml-4 mt-4 text-four">Pseudo : <%= @user.pseudo %></p>
+						</div>
+						<div class="flex flex-row">
+							<p class="text-xl ml-4 mt-4 text-four">
+								<% i = 0%>
+								<% @track_like.each do |track|%>
+								<% i = i + 1%>
+								<%end%> 
+								J'aime : <%= i%>
+							</p>
+						</div>
+						<div class="">
+							<%= form_tag url_for(:action=>"create" , :controller=>"vote"), method: "post" do %>
+							<%= hidden_field_tag 'track', @track.id %>
+							<div class="text-xl text-four mr-8 absolute">
+								<%= submit_tag "J'aime ♥",class:"" %>
+							</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="bg-five mt-8">
+					<h2 class="flex justify-center pt-16 font-bold text-5xl text-four">Poster un commentaire<h2/>
+						<div class="flex justify-center">
+							<%= form_tag url_for(:action=>"create" , :controller=>"comment"), method: "post" do %>
+							<div class="flex flex-col">
+								<div class="text-2xl text-four">
+									<%= label_tag 'Entrez votre commentaire '%>
+								</div>
+								<%= text_area 'content', @content,class:"h-40 text-four text-2xl bg-five rounded-lg text-four mt-2", cols: 40 %>
+								<%= hidden_field_tag 'track', @track.id %>
+								<%= submit_tag "Poster votre commentaire", class:"hover:bg-secondary text-four hover:text-primary font-light border-primary border-4 h-20 hover:cursor-pointer duration-100 mt-8 flex justify-center text-xl hover:cursor-pointer" %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<div class="bg-secondary">
+						<h2 class="flex justify-center pt-16 font-bold text-5xl text-primary">Commentaires<h2/>
+							<div class="pt-16">
+								<% @comments.each do |comment|%>
+								<div class="flex flex-col items-center text-2xl">
+									<%= comment.user.pseudo %> :
+									<% if comment.content == ""%>
+									Commentaire vide
+									<%else%>
+									<%= comment.content %>
+									<%end%>
+									<%end%>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+		
+		
+		
+		
+		<script>
+			
+		</script>

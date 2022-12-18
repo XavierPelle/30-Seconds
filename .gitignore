@@ -34,3 +34,9 @@ Gemfile
 .Gemfile.lock
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+
+
+config/database.yml
+config/initializers/devise.rb
+app/assets/stylesheets/application.css

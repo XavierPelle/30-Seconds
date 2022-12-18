@@ -37,27 +37,10 @@
 
 <%= javascript_import_module_tag "custom/profil" %>
 
-<a href="<%= settings_path%>">modifer le profil</a>
-<div class="bg-primary">
+<div class="bg-primary pb-20">
     <div class="container mx-auto">
         <%= render "include/logo" %>
         <%= render "include/navbar" %>
         <%= render "profil/profil" %>
     </div>
 </div>
-
-
-
-
-
- <% if current_user.avatar.attached? %>
-    <%= image_tag current_user.avatar %>
-<% end %>
-
-<% @tracks.each do |i| %>
-    <div>
-    <p class="title">Title : <%= i.title %></p>
-    <p class="input none"><%= i.inputs %></p>
-    <p class="play">Play</p>
-    </div>
-<% end %>
