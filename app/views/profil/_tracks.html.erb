@@ -3,7 +3,7 @@
   <% @tracks.each do |i| %>
 <div class="flex justify-center mt-7">
 
-  <div class="flex flex-row bg-five h-60 w-3/4 rounded-r-xl rounded-tl-3xl rounded-bl-3xl">
+  <div class="flex flex-row bg-five h-60 w-3/4 rounded-r-xl rounded-tl-3xl rounded-bl-3xl mb-10">
 
 
   
@@ -14,8 +14,6 @@
       </svg>
     </button>
     <div class="flex flex-col">
-      <h3 class="text-4xl ml-4 mt-4 text-four"></h3>
-      <p class="text-2xl ml-4 mt-4 text-four"></p>
       <div class="flex flex-row">
         <p class="text-2xl ml-4 mt-4 text-four"><%= i.title%></p>
       </div>
@@ -23,12 +21,12 @@
        <div class="flex flex-row">
         <p class="text-2xl ml-4 mt-4 text-four"><%= i.user.pseudo %></p>
       </div>
-      <div class="flex flex-row">
+      <div class="flex flex-col lg:flex-row">
         <p class="text-2xl ml-4 mt-4 text-four">likes <%= i.votes.count %></p>
         <p class="text-2xl ml-4 mt-4 text-four">commentaires <%= i.comments.count %></p>
       </div>
-        <div class="flex flex-row">
-             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">lien</a></p>
+        <div class="flex flex-col lg:flex-row">
+             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">Accéder</a></p>
            </div>
     </div>
   

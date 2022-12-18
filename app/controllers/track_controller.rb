@@ -2,7 +2,8 @@ class TrackController < ApplicationController
     def show
         @track = Track.find(params[:id])
         @user = current_user
-        @track_com = @track.comments
+        @comments = @track.comments
+        @Users = User.all
         @track_like = @track.votes
 
         if current_user
