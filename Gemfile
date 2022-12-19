@@ -80,4 +80,6 @@ gem 'mailjet'
 gem 'dotenv-rails'
 
 gem 'faker'
-gem "tailwindcss-rails", "~> 2.0"
+
+
+gem "tailwindcss-rails"

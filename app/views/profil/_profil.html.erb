@@ -1,7 +1,7 @@
 <div class="mt-56 pb-20">
   <div class="h-96 bg-third w-full rounded-tl-3xl rounded-tr-3xl relative">
     <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar,class:"h-64 w-64 aspect-square bg-secondary rounded-xl absolute -bottom-32 left-40" %>
+      <%= image_tag current_user.avatar,class:"h-64 w-64 aspect-square bg-secondary rounded-xl absolute -bottom-32 left-10 lg:left-40" %>
     <% end %>
   </div>
   <div class="h-96 bg-five ">
@@ -21,12 +21,12 @@
       <p class="text-3xl mt-16 text-four font-bold">
         <%= current_user.pseudo %>
       </p>
-      <p class="text-3xl mt-8 text-four w-4/5">
+      <p class="text-3xl mt-8 text-four w-4/5 ml-10 lg:ml-0">
         <%= current_user.description %>
       </p>
     </div>
   </div>
   <div class="min-h-full bg-secondary rounded-br-3xl rounded-bl-3xl">
-    <%= render "profil/tracks"%>
+    <%= render "tracks"%>
   </div>
 </div>
