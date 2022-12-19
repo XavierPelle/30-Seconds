@@ -1,11 +1,35 @@
+  
+  var drumactive = document.getElementById("music");
+
+  let indrum = false
+
+  function inside(){
+    indrum = true
+
+  }
+
+  function outside(){
+    indrum = false
+
+  }
+
+  drumactive.addEventListener("mouseenter", inside);
+
+  drumactive.addEventListener("mouseleave", outside);
+
+
 //---------------------Just Playing-------------------------- //
 console.log("Drum program")
+
 function removeTransition(e) {
+  if (indrum == true) {
     if (e.propertyName !== 'transform') return;
     e.target.classList.remove('playing');
   }
+}
   
   function playSound(e) {
+    if (indrum == true) {
   
     console.log(e)
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -15,7 +39,7 @@ function removeTransition(e) {
     key.classList.add('playing');
     audio.currentTime = 0;
     audio.play();
-  
+  }
   }
   
   const keys = Array.from(document.querySelectorAll('.key'));
@@ -47,6 +71,8 @@ function removeTransition(e) {
   //--- sound input --- //
   
   function playSound(e) {
+
+    if (indrum == true) {
   
     console.log(e)
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -60,7 +86,7 @@ function removeTransition(e) {
     noInput = noInput + e.keyCode + "-" 
   
   }
-  
+  }
   const keys = Array.from(document.querySelectorAll('.key'));
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
   window.addEventListener('keydown', playSound);
@@ -97,6 +123,10 @@ function removeTransition(e) {
   }
   
   stop.addEventListener("click", playing);
+
+
+
+  // ___________________________________________ //
   
   //----------------------- Record Save ------------------------- //
   

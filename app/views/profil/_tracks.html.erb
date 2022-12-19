@@ -1,23 +1,23 @@
-<h2 class="text-7xl uppercase text-primary font-custom font-bold text-center pt-16">your tracks</h2>
+<h2 class="text-7xl uppercase text-primary font-custom font-bold text-center pt-16 pb-16">your tracks</h2>
 
   <% @tracks.each do |i| %>
-<div class="flex justify-center mt-7">
+<div class="flex justify-center">
 
-  <div class="flex flex-row bg-five h-60 w-3/4 rounded-r-xl rounded-tl-3xl rounded-bl-3xl">
+  <div class="flex flex-row bg-five h-60 w-3/4 rounded-r-xl rounded-tl-3xl rounded-bl-3xl mb-10">
 
 
   
     <button class="bg-third w-64 rounded-tl-3xl rounded-bl-3xl">
           <p class="input none"><%= i.inputs %></p>
-      <svg class="h-36 w-40 m-auto play" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="h-36 w-40 m-auto play bg-third" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M39.9456 19.0571L4.7378 40.2884C2.66501 41.532 0 40.0515 0 37.6234V13.9343C0 3.60002 11.1634 -2.85524 20.1357 2.29712L33.7272 10.1145L39.916 13.6678C41.9592 14.8819 41.9888 17.843 39.9456 19.0571ZM41.7193 36.4093L29.7267 43.3383L17.7638 50.2377C13.4702 52.6955 8.61391 52.1921 5.09018 49.7047C3.37272 48.5203 3.58 45.8849 5.38629 44.8189L43.0222 22.2551C44.7989 21.1891 47.1382 22.1959 47.4639 24.2391C48.2042 28.8288 46.309 33.7739 41.7193 36.4093Z" fill="#0D1A26"/>
       </svg>
     </button>
     <div class="flex flex-col">
-      <h3 class="text-4xl ml-4 mt-4 text-four"></h3>
+     
       <p class="text-2xl ml-4 mt-4 text-four"></p>
       <div class="flex flex-row">
-        <p class="text-2xl ml-4 mt-4 text-four"><%= i.title%></p>
+        <p class="text-4xl ml-4 mt-4 text-four font-bold"><%= i.title%></p>
       </div>
 
        <div class="flex flex-row">
@@ -28,7 +28,7 @@
         <p class="text-2xl ml-4 mt-4 text-four">commentaires <%= i.comments.count %></p>
       </div>
         <div class="flex flex-row">
-             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">lien</a></p>
+             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">Voir</a></p>
            </div>
     </div>
   

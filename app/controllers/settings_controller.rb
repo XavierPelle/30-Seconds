@@ -4,6 +4,16 @@ class SettingsController < ApplicationController
     end
 
     def create
-        current_user.update({:pseudo => params[:pseudo], :description => params[:description], :avatar => params[:avatar]})
+        if params[:avatar]
+            current_user.update({:avatar => params[:avatar]})
+        end
+        if params[:description] != ""
+            current_user.update({:description => params[:description]})
+        end
+        if params[:pseudo] != ""
+            current_user.update({:pseudo => params[:pseudo]})
+        end
+
+        redirect_back(fallback_location: root_path)
     end
 end

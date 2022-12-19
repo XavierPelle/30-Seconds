@@ -1,10 +1,15 @@
-<div class="flex flex-row w-1/1">
+<div class="flex flex-row w-1/1 pb-20">
 
-<div class="w-1/2 flex flex-col m-3">
-  <h2 class="text-four text-9xl uppercase mt-56 text-center">Top Track</h2>
-  <% @tracks.each do |i| %>
+<div class="w-1/2 flex flex-col m-3 items-center">
+  <h2 class="text-four text-7xl uppercase mt-20 text-center">Top Track</h2>
+
+  <% j = 1%>
+
+  <% @trackslike.each do |i| %>
+
+ <% if j <= 10 %>
   
-    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl w-1/2">
+    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl w-3/4 ">
           <p class="input none"><%= i.inputs %></p>
       <button class="bg-secondary w-64 rounded-tl-3xl rounded-bl-3xl play">
         <svg class="h-36 w-40 m-auto" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,18 +24,24 @@
           <p class="text-2xl ml-4 mt-4 text-four"><%= i.comments.count %> commentaires</p>
         </div>
            <div class="flex flex-row">
-             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">lien</a></p>
-           </div>
-       
+             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">Voir</a></p>
+       </div>
       </div>
     </div>
+    <%end%>
+    <% j = j + 1%>
   <% end %>
 </div>
 
-<div class="flex flex-col w-1/2 m-3">
-  <h2 class="text-four text-9xl uppercase mt-56 text-center">Lasted Track</h2>
-  <% @tracks.each do |i| %>
-    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl">
+<div class="flex flex-col w-1/2 m-3  items-center">
+  <h2 class="text-four text-7xl uppercase mt-20  text-center ">Lasted Track</h2>
+
+  
+  <% k = 1%>
+  <% @trackstime.reverse_each  do |i| %>
+
+   <% if k <= 10 %>
+    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl w-3/4">
           <p class="input none"><%= i.inputs %></p>
       <button class="bg-secondary w-64 rounded-tl-3xl rounded-bl-3xl play">
         <svg class="h-36 w-40 m-auto" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,11 +56,13 @@
           <p class="text-2xl ml-4 mt-4 text-four"><%= i.comments.count %> commentaires</p>
         </div>
            <div class="flex flex-row">
-             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">lien</a></p>
+             <p class="text-2xl ml-4 mt-4 text-four"><a href="<%= track_path(i.id)%>">Voir</a></p>
            </div>
        
       </div>
     </div>
+    <%end%>
+  <% k = k + 1 %>
   <% end %>
 </div>
 
