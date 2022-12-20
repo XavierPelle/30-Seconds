@@ -2,53 +2,11 @@
 <%= javascript_import_module_tag "custom/drum" %>
 
 <section id="music-general">
-
-    <audio data-key="103" src="assets/clap.wav"></audio>
-    <audio data-key="104" src="assets/hihat.wav"></audio>
-    <audio data-key="105" src="assets/kick.wav"></audio>
-    <audio data-key="100" src="assets/openhat.wav"></audio>
-    <audio data-key="101" src="assets/boom.wav"></audio>
-    <audio data-key="102" src="assets/ride.wav"></audio>
-    <audio data-key="97" src="assets/snare.wav"></audio>
-    <audio data-key="98" src="assets/tom.wav"></audio>
-    <audio data-key="99" src="assets/tink.wav"></audio>
-    <audio data-key="65" src="assets/c3.mp3"></audio>
-    <audio data-key="81" src="assets/c4.mp3"></audio>
-    <audio data-key="87" src="assets/c5.mp3"></audio>
-    <audio data-key="90" src="assets/d3.mp3"></audio>
-    <audio data-key="83" src="assets/d4.mp3"></audio>
-    <audio data-key="88" src="assets/d5.mp3"></audio>
-    <audio data-key="69" src="assets/e3.mp3"></audio>
-    <audio data-key="68" src="assets/e4.mp3"></audio>
-    <audio data-key="67" src="assets/e5.mp3"></audio>
-    <audio data-key="82" src="assets/f3.mp3"></audio>
-    <audio data-key="70" src="assets/f4.mp3"></audio>
-    <audio data-key="86" src="assets/f5.mp3"></audio>
-    <audio data-key="84" src="assets/g3.mp3"></audio>
-    <audio data-key="71" src="assets/g4.mp3"></audio>
-    <audio data-key="66" src="assets/g5.mp3"></audio>
-    <audio data-key="89" src="assets/a3.mp3"></audio>
-    <audio data-key="72" src="assets/a4.mp3"></audio>
-    <audio data-key="78" src="assets/a5.mp3"></audio>
-    <audio data-key="85" src="assets/b3.mp3"></audio>
-    <audio data-key="74" src="assets/b4.mp3"></audio>
-    <audio data-key="188" src="assets/b5.mp3"></audio>
-    <audio data-key="79" src="assets/bell.wav"></audio>
-    <audio data-key="73" src="assets/bell2.flac"></audio>
-    <audio data-key="80" src="assets/bell3.wav"></audio>
-    <audio data-key="75" src="assets/snow.wav"></audio>
-    <audio data-key="49" src="assets/B.mp3"></audio>
-    <audio data-key="50" src="assets/C.mp3"></audio>
-    <audio data-key="51" src="assets/D.mp3"></audio>
-    <audio data-key="52" src="assets/E.mp3"></audio>
-    <audio data-key="53" src="assets/F.mp3"></audio>
-    <audio data-key="54" src="assets/G.mp3"></audio>
-    <audio data-key="55" src="assets/H.mp3"></audio>
-    <audio data-key="56" src="assets/I.mp3"></audio>
-    <audio data-key="76" src="assets/CARILLION.mp3"></audio>
-    <audio data-key="77" src="assets/Kitten.mp3"></audio>
-<!--
-  <audio data-key="103" src="<%= asset_path('clap.wav') %>"></audio>
+  
+<audio data-key="111" src="<%=asset_path('drumkit(1).wav')%>"></audio>
+<audio data-key="106" src="<%=asset_path('drumkit(2).wav')%>"></audio>
+<audio data-key="109" src="<%=asset_path('drumkit(3).wav')%>"></audio>
+<audio data-key="103" src="<%= asset_path('clap.wav') %>"></audio>
 <audio data-key="104" src="<%= asset_path('hihat.wav') %>"></audio>
 <audio data-key="105" src="<%= asset_path('kick.wav') %>"></audio>
 <audio data-key="100" src="<%= asset_path('openhat.wav') %>"></audio>
@@ -82,7 +40,22 @@
 <audio data-key="73" src="<%= asset_path('bell2.flac') %>"></audio>
 <audio data-key="80" src="<%= asset_path('bell3.wav') %>"></audio>
 <audio data-key="75" src="<%= asset_path('snow.wav') %>"></audio>
- -------->
+<audio data-key="49" src="<%= asset_path('B.mp3')%>"></audio>
+<audio data-key="50" src="<%= asset_path('C.mp3')%>"></audio>
+<audio data-key="51" src="<%= asset_path('D.mp3')%>"></audio>
+<audio data-key="52" src="<%= asset_path('E.mp3')%>"></audio>
+<audio data-key="53" src="<%= asset_path('F.mp3')%>"></audio>
+<audio data-key="54" src="<%= asset_path('G.mp3')%>"></audio>
+<audio data-key="55" src="<%= asset_path('H.mp3')%>"></audio>
+<audio data-key="56" src="<%= asset_path('I.mp3')%>"></audio>
+<audio data-key="76" src="<%= asset_path('CARILLION.mp3')%>"></audio>
+<audio data-key="77" src="<%= asset_path('Kitten.mp3')%>"></audio>
+<audio data-key="190" src="<%= asset_path('santa.mp3')%>"></audio>
+<audio data-key="191" src="<%= asset_path('fire.wav')%>"></audio>
+<audio data-key="57" src="<%= asset_path('voice(1).ogg')%>"></audio>
+<audio data-key="48" src="<%= asset_path('voice(2).ogg')%>"></audio>
+<audio data-key="223" src="<%= asset_path('bubble.wav')%>"></audio>
+
   <div id="music">
 
    <div class="keys">
@@ -131,14 +104,14 @@
           <span class="sound">X8</span>
         </div>
 
-        <div data-key="1" class="key soundbox">
+        <div data-key="57" class="key soundboxtwo">
           <kbd>9</kbd>
-          <span class="sound"></span>
+          <span class="sound">Voice 1</span>
         </div>
 
-        <div data-key="1" class="key soundbox">
+        <div data-key="48" class="key soundboxtwo">
           <kbd>0</kbd>
-          <span class="sound"></span>
+          <span class="sound">Voice 2</span>
         </div>
       
       </div>
@@ -285,19 +258,19 @@
           <span class="sound">b3</span>
         </div>
 
-        <div data-key="1" class="key soundboxtwo">
+        <div data-key="190" class="key soundboxtwo">
           <kbd>.</kbd>
-          <span class="sound"></span>
+          <span class="sound">Santa</span>
         </div>
 
-        <div data-key="1" class="key soundboxtwo">
+        <div data-key="191" class="key soundboxtwo">
           <kbd>/</kbd>
-          <span class="sound"></span>
+          <span class="sound">Fire</span>
         </div>
 
-           <div data-key="1" class="key soundboxtwo">
+           <div data-key="223" class="key soundboxtwo">
           <kbd>§</kbd>
-          <span class="sound"></span>
+          <span class="sound">Bubble</span>
         </div>
       
       </div>
@@ -307,19 +280,19 @@
     <div id="keynb">
 
       <div>
-        <div data-key="1" class="key soundboxtree">
+        <div data-key="111" class="key soundboxtree">
           <kbd>/</kbd>
-          <span class="sound">*</span>
+          <span class="sound">D1</span>
         </div>
 
-        <div data-key="1" class="key soundboxtree">
+        <div data-key="106" class="key soundboxtree">
           <kbd>*</kbd>
-          <span class="sound">*</span>
+          <span class="sound">D2</span>
         </div>
 
-        <div data-key="1" class="key soundboxtree">
+        <div data-key="109" class="key soundboxtree">
           <kbd>-</kbd>
-          <span class="sound">*</span>
+          <span class="sound">D3</span>
         </div>
       </div>
 
@@ -382,17 +355,19 @@
   </div>
 
    <div id="block-btn">
+   <a href="<%= feed_index_path %>"><button class="btn-8" type="button" id="save"> ACCEUIL </button></a>
   <button class="btn-8" type="button" id="record"> RECORD </button>
   <button class="btn-8" type="button" id="ear"> EAR </button>
   <button class="btn-8" type="button" id="save"> VALID </button>
-
   </div>
     
 </div>
 
 <div id="track-all">
 
+   
   <h2 id="track-title">My track</h2>
+
 
   <%= form_tag url_for(action: 'create'), method: "post" do %>
   <%= text_field_tag 'title', 'TITRE' %>

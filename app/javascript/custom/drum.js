@@ -1,4 +1,13 @@
+const screenWidth = window.screen.width;
+
+
+if (screenWidth < 768 ) {
+  history.back()
+} else {
   
+}
+
+
   var drumactive = document.getElementById("music");
 
   let indrum = false

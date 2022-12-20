@@ -1,11 +1,11 @@
-<div class="mt-56 pb-20">
-  <div class="h-96 bg-third w-full rounded-tl-3xl rounded-tr-3xl relative">
+<div class="mt-56 pb-20 max-md:mt-5 ">
+  <div class="h-96 bg-third w-full rounded-tl-3xl rounded-tr-3xl relative max-md:flex max-md:items-center">
     <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar,class:"h-64 w-64 aspect-square bg-secondary rounded-xl absolute -bottom-32 left-10 lg:left-40" %>
+      <%= image_tag current_user.avatar,class:"h-64 w-64 aspect-square bg-secondary rounded-xl absolute -bottom-32 left-10  max-md:-bottom-0 max-md:relative" %>
     <% end %>
   </div>
   <div class="h-96 bg-five ">
-    <div class="flex justify-end ">
+    <div class="flex justify-end flex-row max-md:flex-col p-6">
       <a href="<%= settings_path%>">
         <button class="flex mt-4 mr-4 p-9 items-center rounded-md h-11 text-2xl font-custom bg-secondary">
           Editer mon profil
@@ -17,11 +17,11 @@
         </button>
       </a>
     </div>
-    <div class="mx-44 container">
-      <p class="text-3xl mt-16 text-four font-bold">
+    <div class="mx-44 container max-md:mx-10">
+      <p class="text-3xl mt-16 max-md:m-0 text-four font-bold">
         <%= current_user.pseudo %>
       </p>
-      <p class="text-3xl mt-8 text-four w-4/5 ml-10 lg:ml-0">
+      <p class="text-3xl mt-8 text-four w-4/5 ml-10 max-md:m-0 lg:ml-0">
         <%= current_user.description %>
       </p>
     </div>

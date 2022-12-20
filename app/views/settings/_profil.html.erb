@@ -1,7 +1,7 @@
-<div class="mt-56 pb-20">
-  <div class="h-96 bg-third w-full rounded-tl-3xl rounded-tr-3xl relative">
+<div class="mt-56 pb-20 max-md:mt-5">
+  <div class="h-96 bg-third w-full rounded-tl-3xl rounded-tr-3xl relative max-md:flex max-md:items-center">
     <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar,class:"h-64 w-64 aspect-square bg-secondary rounded-xl absolute -bottom-32 left-40" %>
+      <%= image_tag current_user.avatar,class:"h-64 w-64 aspect-square bg-secondary rounded-xl absolute -bottom-32 left-10  max-md:-bottom-0 max-md:relative" %>
     <% end %>
   </div>
   <div class="h-96 bg-five ">
@@ -9,7 +9,7 @@
  
     </div>
     <div class="mx-44 container">
-      <p class="text-3xl mt-16 text-four font-bold">
+      <p class="text-3xl mt-40 text-four font-bold">
         <%= current_user.pseudo %>
       </p>
       <p class="text-3xl mt-8 text-four w-4/5">

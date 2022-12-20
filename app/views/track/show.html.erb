@@ -1,9 +1,10 @@
 
 <%= javascript_import_module_tag "custom/track" %>
-
-<!--
+<audio data-key="111" src="<%=asset_path('drumkit(1).wav')%>"></audio>
+<audio data-key="106" src="<%=asset_path('drumkit(2).wav')%>"></audio>
+<audio data-key="109" src="<%=asset_path('drumkit(3).wav')%>"></audio>
 <audio data-key="103" src="<%= asset_path('clap.wav') %>"></audio>
-<audio data-key="104" src="<%= asset_path('hithat.wav') %>"></audio>
+<audio data-key="104" src="<%= asset_path('hihat.wav') %>"></audio>
 <audio data-key="105" src="<%= asset_path('kick.wav') %>"></audio>
 <audio data-key="100" src="<%= asset_path('openhat.wav') %>"></audio>
 <audio data-key="101" src="<%= asset_path('boom.wav') %>"></audio>
@@ -36,9 +37,23 @@
 <audio data-key="73" src="<%= asset_path('bell2.flac') %>"></audio>
 <audio data-key="80" src="<%= asset_path('bell3.wav') %>"></audio>
 <audio data-key="75" src="<%= asset_path('snow.wav') %>"></audio>
---->
+<audio data-key="49" src="<%= asset_path('B.mp3')%>"></audio>
+<audio data-key="50" src="<%= asset_path('C.mp3')%>"></audio>
+<audio data-key="51" src="<%= asset_path('D.mp3')%>"></audio>
+<audio data-key="52" src="<%= asset_path('E.mp3')%>"></audio>
+<audio data-key="53" src="<%= asset_path('F.mp3')%>"></audio>
+<audio data-key="54" src="<%= asset_path('G.mp3')%>"></audio>
+<audio data-key="55" src="<%= asset_path('H.mp3')%>"></audio>
+<audio data-key="56" src="<%= asset_path('I.mp3')%>"></audio>
+<audio data-key="76" src="<%= asset_path('CARILLION.mp3')%>"></audio>
+<audio data-key="77" src="<%= asset_path('Kitten.mp3')%>"></audio>
+<audio data-key="190" src="<%= asset_path('santa.mp3')%>"></audio>
+<audio data-key="191" src="<%= asset_path('fire.wav')%>"></audio>
+<audio data-key="57" src="<%= asset_path('voice(1).ogg')%>"></audio>
+<audio data-key="48" src="<%= asset_path('voice(2).ogg')%>"></audio>
+<audio data-key="223" src="<%= asset_path('bubble.wav')%>"></audio>
 
-<div class="bg-primary bg-cover">
+<div class="bg-primary mb-6">
 	
 	<div class="container mx-auto">
 		<%= render 'include/logo' %>
@@ -46,12 +61,13 @@
 		<div class="pt-56">
 			<div class="h-96 w-full rounded-tl-3xl rounded-tr-3xl relative ">
 				<div class="flex flex-row  h-60  rounded-r-xl rounded-tl-3xl rounded-bl-3xl justify-center">
-					<button class="bg-third w-64 rounded-tl-3xl rounded-bl-3xl">
-						<svg class="h-36 w-40 m-auto play" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<p class="input" id="inputpart"><%= @track.inputs%></p>
+					<button id="playtrack" class="bg-third w-64 rounded-tl-3xl rounded-bl-3xl play">
+						<svg class="h-36 w-40 m-auto" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M39.9456 19.0571L4.7378 40.2884C2.66501 41.532 0 40.0515 0 37.6234V13.9343C0 3.60002 11.1634 -2.85524 20.1357 2.29712L33.7272 10.1145L39.916 13.6678C41.9592 14.8819 41.9888 17.843 39.9456 19.0571ZM41.7193 36.4093L29.7267 43.3383L17.7638 50.2377C13.4702 52.6955 8.61391 52.1921 5.09018 49.7047C3.37272 48.5203 3.58 45.8849 5.38629 44.8189L43.0222 22.2551C44.7989 21.1891 47.1382 22.1959 47.4639 24.2391C48.2042 28.8288 46.309 33.7739 41.7193 36.4093Z" fill="#0D1A26"/>
 						</svg>
 					</button>
-					<div class="flex flex-col bg-five w-3/4 rounded-br-3xl rounded-tr-3xl">
+					<div class="flex flex-col bg-five w-3/4 rounded-3xl ml-3">
 						<h3 class="text-4xl ml-4 mt-4 text-four"></h3>
 						<p class="text-2xl ml-4 mt-4 text-four"></p>
 						<div class="flex flex-row">
@@ -59,29 +75,35 @@
 						</div>
 						
 						<div class="flex flex-row">
-							<p class="text-xl ml-4 mt-4 text-four">Pseudo : <%= @user.pseudo %></p>
+							<p class="text-xl ml-4 mt-4 text-four">Author : <%= @user.pseudo %></p>
 						</div>
 						<div class="flex flex-row">
 							<p class="text-xl ml-4 mt-4 text-four">
-								<% i = 0%>
-								<% @track_like.each do |track|%>
-								<% i = i + 1%>
-								<%end%> 
-								J'aime : <%= i%>
+								Upvote: <%= @track.votes.count%>
 							</p>
 						</div>
 						<div class="">
+						
+						<% if @like%>
+
+							<% if @like.user.id == current_user.id && @like.track.id == @track.id %>
+
+							<%end%>
+
+						<%else%>
 							<%= form_tag url_for(:action=>"create" , :controller=>"vote"), method: "post" do %>
 							<%= hidden_field_tag 'track', @track.id %>
 							<div class="text-xl text-four mr-8 absolute">
-								<%= submit_tag "J'aime ♥",class:"" %>
+								<%= submit_tag "Upvote", class:"" %>
 							</div>
 							<% end %>
+
+						<% end %>
 						</div>
 					</div>
 				</div>
-				<div class="bg-five mt-8">
-					<h2 class="flex justify-center pt-16 font-bold text-5xl text-four">Poster un commentaire<h2/>
+				<div class="bg-five mt-8 rounded-3xl">
+					<h2 class="flex justify-center pt-16 font-bold text-5xl text-four">Poster un commentaire</h2>
 						<div class="flex justify-center">
 							<%= form_tag url_for(:action=>"create" , :controller=>"comment"), method: "post" do %>
 							<div class="flex flex-col">
@@ -94,30 +116,24 @@
 								<% end %>
 							</div>
 						</div>
-					</div>
-					<div class="bg-secondary">
-						<h2 class="flex justify-center pt-16 font-bold text-5xl text-primary">Commentaires<h2/>
-							<div class="pt-16">
+						<div class="bg-secondary pb-20">
+						<h2 class="flex justify-center pt-16 font-bold text-5xl text-primary ">Commentaires</h2>
+							<div class="pt-16 flex justify-center items-center flex-col">
 								<% @comments.each do |comment|%>
-								<div class="flex flex-col items-center text-2xl">
-									<%= comment.user.pseudo %> :
-									<% if comment.content == ""%>
-									Commentaire vide
-									<%else%>
-									<%= comment.content %>
-									<%end%>
-									<%end%>
+								<%if comment.content == "[\"\"\]" %>
+								<%else%>
+								<div class="bg-five/20 pl-6 text-left w-1/2 rounded-3xl flex flex-col text-2xl border-solid border-2 border-indigo-600 pt-6 pb-6 m-6">	
+									<p class="font-bold mb-3"><%= comment.user.pseudo %>:</p>
+									<p> <%= comment.content %></p>
 								</div>
+								<%end%>
+								<%end%>
 							</div>
 						</div>
-					</div>
+					</div>	
 				</div>
 			</div>
+		</div>
+	</div>
 </div>
-		
-		
-		
-		
-		<script>
-			
-		</script>
+	

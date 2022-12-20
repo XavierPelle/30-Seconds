@@ -1,6 +1,10 @@
 class DrumsController < ApplicationController
     def index
         @track = Track.where(user: current_user)
+        a = request.headers['HTTP_USER_AGENT']
+        puts "-"*60
+        puts a 
+        puts "-"*60
     end
 
     def create

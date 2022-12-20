@@ -1,6 +1,6 @@
 console.log("track Program")
 
-var playy = document.getElementById("play");
+var playy = document.getElementById("playtrack");
   
 let playngg = function(){
 

@@ -174,7 +174,7 @@ visibility: hidden;
 
 #music-general{
   max-height: 100vh;
-  min-height: 90vh;
+  min-height: 100vh;
   width: 100%;
   background: rgb(13, 26, 38)
 }
@@ -337,4 +337,61 @@ height: 60px;
   border-radius: 10px;
   border: solid 1px black;
   padding: 0;
+}
+
+
+@media only screen and (max-width: 1440px) {
+
+
+  #music {
+    max-width: 85%;
+    min-width: 85%;
+  }
+
+  .key {
+    width: 7rem;
+}
+
+  #track-all{
+    max-width: 15%;
+    min-width: 15%;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 1440px) {
+
+  #music-general {
+    flex-direction: column;
+  }
+
+  #music {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .key {
+    width: 7rem;
+}
+
+  #track-all{
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .keys {
+    flex-direction: column;
+}
+
+#keytxt {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+#music {
+  flex-direction: column-reverse;
+  display: flex;
+}
 }

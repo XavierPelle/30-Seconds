@@ -1,6 +1,6 @@
-<div class="flex flex-row w-1/1 pb-20">
+<div class="flex flex-row w-1/1 pb-20 max-md:flex-col">
 
-<div class="w-1/2 flex flex-col m-3 items-center">
+<div class="w-1/2 flex flex-col m-3 items-center max-md:w-full">
   <h2 class="text-four text-7xl uppercase mt-20 text-center">Top Track</h2>
 
   <% j = 1%>
@@ -9,7 +9,7 @@
 
  <% if j <= 10 %>
   
-    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl w-3/4 ">
+    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl w-3/4 max-md:w-full">
           <p class="input none"><%= i.inputs %></p>
       <button class="bg-secondary w-64 rounded-tl-3xl rounded-bl-3xl play">
         <svg class="h-36 w-40 m-auto" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
   <% end %>
 </div>
 
-<div class="flex flex-col w-1/2 m-3  items-center">
+<div class="flex flex-col w-1/2 m-3  items-center max-md:w-full">
   <h2 class="text-four text-7xl uppercase mt-20  text-center ">Lasted Track</h2>
 
   
@@ -41,7 +41,7 @@
   <% @trackstime.reverse_each  do |i| %>
 
    <% if k <= 10 %>
-    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl w-3/4">
+    <div class="flex flex-row bg-five h-60 mt-10 rounded-r-xl w-3/4 max-md:w-full">
           <p class="input none"><%= i.inputs %></p>
       <button class="bg-secondary w-64 rounded-tl-3xl rounded-bl-3xl play">
         <svg class="h-36 w-40 m-auto" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
